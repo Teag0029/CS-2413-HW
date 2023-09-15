@@ -13,3 +13,5 @@ Dynamically Allocated array of changeable size
 
 # HW 4
 Singly-Linked-List List operations
+gotta say, it's really hard to reverse a SLL without a stack
+What I did definitely wasn't the best or most efficient, but it made the sid link backwards!

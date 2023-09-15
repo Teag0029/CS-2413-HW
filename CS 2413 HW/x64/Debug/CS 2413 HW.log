@@ -1,3 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (CS-2413-HW.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   HW4_CS2413.cpp
-  CS 2413 HW.vcxproj -> C:\Users\Coolb\source\repos\CS-2413-HW\x64\Debug\CS 2413 HW.exe
+C:\Users\Coolb\source\repos\CS-2413-HW\CS 2413 HW\HW4_CS2413.cpp(326,3): error C2143: syntax error: missing ';' before '}'

@@ -312,21 +312,19 @@ void List::Reverse() {
 	if(head!=NULL){
 		stack<Node*> r;
 		Node* c = head;
-		Node* end = c;
 		while (c != NULL) {
 			r.push(c);
-			end = c;
 			c = c->Get_Pnext();
 		}
 
 		c = r.top();
+		head = c;
 		for (int i = 0; i < r.size(); i++) {
 			r.pop();
 			c->Set_Pnext(r.top());
-			c = r.empty() ? c : r.top();
+			c = c->Get_Pnext()
 		}
 		c->Set_Pnext(NULL);
-		head = end;
 	}
 
 }
@@ -396,7 +394,6 @@ int HW4_CS2413::Main()
 		temp->Set_SID(sid);
 		temp->Set_GPA(gpa);
 		x.Insert(temp, idx);
-		//my insert is one off
 		x.PrtSID();
 	}
 	// Mode 4: test Remove()

@@ -1,5 +1,5 @@
-#include "HW4_CS2413.h"
-#include <stack>
+//#include "HW4_CS2413.h"
+//#include <stack>
 
 //
 // ========================================
@@ -75,6 +75,8 @@ Node::Node() {
 class List {
 private:
 	Node* head;
+
+	Node* at(int idx);
 public:
 	// List function is defined for you.
 	List();
@@ -309,23 +311,25 @@ int List::Remove(int idx) {
 // print function and get 246, after 
 // running Reverse we should get 642. 
 void List::Reverse() {
-	if(head!=NULL){
-		stack<Node*> r;
-		Node* c = head;
-		while (c != NULL) {
-			r.push(c);
-			c = c->Get_Pnext();
-		}
-
-		c = r.top();
-		head = c;
-		while (c != NULL) {
-			r.pop();
-			c->Set_Pnext((r.empty() ? NULL : r.top()));
-			c = c->Get_Pnext();
-		}
+	int size = Lsize();
+	Node* newList = at(size);
+	Node* newT = newList;
+	for (int i = size; i > 1; i--) {
+		newT = at(i);
+		newT->Set_Pnext(at(i-1));
 	}
+	
+	head = newList;
 
+	at(size)->Set_Pnext(NULL);
+}
+
+Node* List::at(int idx) {
+	Node* t = head;
+	for (int i = 1; i < idx; i++) {
+		t = t->Get_Pnext();
+	}
+	return t;
 }
 
 // Clear function removes all nodes from 
@@ -346,7 +350,7 @@ void List::Clear() {
 	head = NULL;
 }
 
-int HW4_CS2413::Main()
+int main()
 {
 	int mode, key, sid, idx;
 	float gpa;
@@ -396,11 +400,17 @@ int HW4_CS2413::Main()
 		x.PrtSID();
 	}
 	// Mode 4: test Remove()
+	//4 0 0 0 5 1 2 3 4 5 6 7 8 9 10 l
 	else if (mode == 4) {
-		x.Remove(idx);
+		while (x.Lsize() != 0) {
+			x.Remove(x.Lsize());
+			x.PrtSID();
+			cout << "\n";
+		}
 		x.PrtSID();
 	}
 	// Mode 5: test Reverse()
+	//5 0 0 0 0 1 2 3 4 5 6 7 8 9 10 l
 	else if (mode == 5) {
 		x.Reverse();
 		x.PrtSID();

@@ -5,6 +5,7 @@
 
 using namespace std;
 
+/*
 int main() {
 	int a = 1;
 	//in the project, there can only be ONE main
@@ -13,6 +14,7 @@ int main() {
 	a = HW4_CS2413::Main();
 	return a;
 }
+*/
 
 void pointerProof() {
 	int a[5] = { 0,1,2,3,4 };

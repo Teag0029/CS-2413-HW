@@ -6,12 +6,12 @@
 using namespace std;
 
 int main() {
-	int a;
+	int a = 1;
 	//in the project, there can only be ONE main
 	//a = HW1_CS2413::Main();
 	//a = HW3_CS2413::Main();
-	//a = HW4_CS2413::Main();
-	return 1;
+	a = HW4_CS2413::Main();
+	return a;
 }
 
 void pointerProof() {

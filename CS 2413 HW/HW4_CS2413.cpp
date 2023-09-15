@@ -260,28 +260,40 @@ int List::Insert(Node* p, int idx) {
 // where "1" means removing head 
 // and "Lsize" means removing tail. 
 int List::Remove(int idx) {
+	//if (within bounds?){do} return false;
 	if (idx > 0 && idx <= Lsize()) {
 		Node* t = head;
+
+		//if idx == 1; update our head to its next element
 		if (idx == 1) {
 			head = t->Get_Pnext();
 		}
-		else if (idx == Lsize()) {
-			Node* b4 = t;
 
-			for (int i = 0; i < idx; i++) {
-				b4 = t;
+		//if idx== size; traverse to the end of the list and set 2nd to last's nextP to NULL
+		else if (idx == Lsize()) {
+
+			//traverse to 2nd last elem
+			while (t->Get_Pnext()->Get_Pnext() != NULL) {
 				t = t->Get_Pnext();
 			}
-			b4->Set_Pnext(t ->Get_Pnext());
+
+			//last of current SLL
+			Node* erase = t->Get_Pnext();
+			//set 2nd last's NextP to null (making it the 'new' last elem
+			t->Set_Pnext(NULL);
+			//free up that now unreferenced last elem
+			delete erase;
+			t = NULL; //so that the 'new' last element doesnt get erased, done in line above
 		}
+
+		//otherwise, traverse to specific spot
 		else {
 			Node* b4 = t;
-
-			while (t->Get_Pnext() != NULL) {
+			for (int i = 1; i < idx; i++){
 				b4 = t;
 				t = t->Get_Pnext();
 			}
-			b4->Set_Pnext(NULL);
+			b4->Set_Pnext(t->Get_Pnext());
 		}
 		delete t;
 		return 1;

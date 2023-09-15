@@ -319,12 +319,11 @@ void List::Reverse() {
 
 		c = r.top();
 		head = c;
-		for (int i = 0; i < r.size(); i++) {
+		while (c != NULL) {
 			r.pop();
-			c->Set_Pnext(r.top());
-			c = c->Get_Pnext()
+			c->Set_Pnext((r.empty() ? NULL : r.top()));
+			c = c->Get_Pnext();
 		}
-		c->Set_Pnext(NULL);
 	}
 
 }

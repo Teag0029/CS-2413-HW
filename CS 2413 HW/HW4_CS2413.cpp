@@ -206,8 +206,8 @@ int List::Insert(Node* p, int idx) {
 	bool inserted = false; 
 
 	//check bounds and make sure p isn't null
-	if (Lsize() + 1 < idx || idx < 1 || p == NULL) {
-		return -1;
+	if (idx > Lsize() + 1 || idx < 1 || p == NULL) {
+		return false;
 	}
 
 	//insert at head
@@ -216,40 +216,40 @@ int List::Insert(Node* p, int idx) {
 		//if head is null, we can't use the member function
 		//essentially, no list to tack on
 		if (head != NULL){
+			//make sure we're pointing to the rest of the list
 			p->Set_Pnext(head);
 		}
+		//keep track of our new start
 		head = p;
-		inserted = true;
+		return true;
 	}
 
-	//insert in the middle
+	//traverse and add at the end
 	else if (idx == Lsize() + 1) {
+		//to traverse
 		Node* temp = head;
-		while (temp != NULL) {
-			if (temp->Get_Pnext() == NULL) {
-				temp->Set_Pnext(p);
-				inserted = true;
-				break;
-			}
+
+		//get to the last elem (the one pointing to null)
+		while (temp->Get_Pnext() != NULL) {
 			temp = temp->Get_Pnext();
 		}
+		//let it point to our inputted Node
+		temp->Set_Pnext(p);
+		return true;
 	}
 
-	//traverse and add to the end
+	//go to required Node insert
 	else{
-		//prev elem
-		Node* elemb4 = head;
+		Node* temp = head;
 
 		//navigate to the index pointer we want
-		for (int i = 1; i < idx; ++i) {
-			elemb4 = elemb4->Get_Pnext();
+		for (int i = 2; i < idx; i++) {
+			temp = temp->Get_Pnext();
 		}
-		p->Set_Pnext(elemb4->Get_Pnext());
-		elemb4->Set_Pnext(p);
-		inserted = true;
+		p->Set_Pnext(temp->Get_Pnext());
+		temp->Set_Pnext(p);
+		return true;
 	}
-
-	return inserted;
 }
 
 // Remove function removes the idx_th 
@@ -384,6 +384,7 @@ int HW4_CS2413::Main()
 		temp->Set_SID(sid);
 		temp->Set_GPA(gpa);
 		x.Insert(temp, idx);
+		//my insert is one off
 		x.PrtSID();
 	}
 	// Mode 4: test Remove()

@@ -394,24 +394,20 @@ int main()
 	// Mode 3: test Insert()
 	else if (mode == 3) {
 		Node* temp = new Node;
-		temp->Set_SID(sid);
-		temp->Set_GPA(gpa);
+		temp->Set_SID(key);
+		temp->Set_GPA(3.5);
 		x.Insert(temp, idx);
 		x.PrtSID();
 	}
 	// Mode 4: test Remove()
-	//4 0 0 0 5 1 2 3 4 5 6 7 8 9 10 l
 	else if (mode == 4) {
-		while (x.Lsize() != 0) {
-			x.Remove(x.Lsize());
-			x.PrtSID();
-			cout << "\n";
-		}
+		x.Remove(idx);
 		x.PrtSID();
 	}
 	// Mode 5: test Reverse()
-	//5 0 0 0 0 1 2 3 4 5 6 7 8 9 10 l
 	else if (mode == 5) {
+		x.Reverse();
+		//x.PrtSID();
 		x.Reverse();
 		x.PrtSID();
 	}

@@ -18,29 +18,14 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HW3_CS2413.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HW4_CS2413.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HW1_CS2413.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HW6_CS2413.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HW3_CS2413.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HW4_CS2413.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HW1_CS2413.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>

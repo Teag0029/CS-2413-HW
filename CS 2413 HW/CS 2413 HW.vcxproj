@@ -132,11 +132,13 @@
     <ClCompile Include="HW3_CS2413.cpp" />
     <ClCompile Include="HW4_CS2413.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HW1_CS2413.h" />
     <ClInclude Include="HW3_CS2413.h" />
     <ClInclude Include="HW4_CS2413.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,19 +2,21 @@
 #include "HW1_CS2413.h"
 #include "HW3_CS2413.h"
 #include "HW4_CS2413.h"
+#include "stack.h"
 
 using namespace std;
 
-/*
+///*
 int main() {
 	int a = 1;
 	//in the project, there can only be ONE main
 	//a = HW1_CS2413::Main();
 	//a = HW3_CS2413::Main();
-	a = HW4_CS2413::Main();
+	//a = HW4_CS2413::Main();
+	a = stack::Main();
 	return a;
 }
-*/
+//*/
 
 void pointerProof() {
 	int a[5] = { 0,1,2,3,4 };

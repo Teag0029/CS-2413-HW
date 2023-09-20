@@ -1,4 +1,4 @@
-//#include "HW4_CS2413.h"
+#include "HW4_CS2413.h"
 //#include <stack>
 
 //
@@ -350,7 +350,7 @@ void List::Clear() {
 	head = NULL;
 }
 
-int main()
+int HW4_CS2413::Main()
 {
 	int mode, key, sid, idx;
 	float gpa;

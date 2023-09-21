@@ -154,7 +154,7 @@ Node* MSort(/*input arguments*/) {
 
 int main()
 {
-	cout << "HW6 main() | INPUT - mode, key : ";
+	//cout << "HW6 main() | INPUT - mode, key : ";
 	// This array holds the list 
 	// for binary search. 
 	int L1[11];
@@ -167,6 +167,38 @@ int main()
 
 	cin >> mode >> key;
 
+	// The first loop takes input for binary 
+		// search. For simplicity, we assume there 
+		// are always 11 input integers that are 
+		// unique and sorted in ascending order. 
+		// You can definitely write additional 
+		// code in the binary search function 
+		// to check the validity of these 
+		// assumptions, but the test cases on 
+		// Canvas will satisfy the assumptions. 
+	for (int i = 0; i < 11; i++) {
+		cin >> L1[i];
+	}
+
+
+	// ----------------------------
+	// ---------- Task 3 ----------
+	// ----------------------------
+	// The second loop takes input for merge 
+	// sort. You need to complete the loop.  
+	// This task is the same as the task in 
+	// hw4. You may see reference code in 
+	// lecture 05.The head pointer "L2" has 
+	// been declared above for you. Use it 
+	// to store head of the constructed list. 
+	// You can also declare extra pointers 
+	// or nodes as necessary.
+	while (cin >> temp) {
+
+
+
+
+	}
 
 
 	// -----------------------------------
@@ -176,53 +208,24 @@ int main()
 	// Mode 0: test BSearch()
 	if (mode == 0) {
 
-		cout << "testing B Search. input 11 numbers: ";
+		//cout << "testing B Search. input 11 numbers: ";
 
-		// The first loop takes input for binary 
-		// search. For simplicity, we assume there 
-		// are always 11 input integers that are 
-		// unique and sorted in ascending order. 
-		// You can definitely write additional 
-		// code in the binary search function 
-		// to check the validity of these 
-		// assumptions, but the test cases on 
-		// Canvas will satisfy the assumptions. 
-		for (int i = 0; i < 11; i++) {
-			cin >> L1[i];
-		}
+		
 
-		cout << "input taken: ";
+		//cout << "input taken: ";
 
-		for (int i = 0; i < 11; i++) {
-			cout << L1[i];
-		}
+		//for (int i = 0; i < 11; i++) {
+			//cout << L1[i];
+		//}
 
 		// Task 4: apply binary search. 
 		// One input should be "L1" (search list)
 		// Another input should be "key" (search key)
 		// Complete the input based on your design.
-		cout << "\n" << BSearch(key, L1, 0, 10);
+		cout << BSearch(key, L1, 0, 10);
 	}
 	// Mode 1: test MSort()
 	else if (mode == 1) {
-		// ----------------------------
-		// ---------- Task 3 ----------
-		// ----------------------------
-		// The second loop takes input for merge 
-		// sort. You need to complete the loop.  
-		// This task is the same as the task in 
-		// hw4. You may see reference code in 
-		// lecture 05.The head pointer "L2" has 
-		// been declared above for you. Use it 
-		// to store head of the constructed list. 
-		// You can also declare extra pointers 
-		// or nodes as necessary.
-		while (cin >> temp) {
-
-
-
-
-		}
 
 		// Task 5: apply merge sort. 
 		// One input should be "L2" (input list)
